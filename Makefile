@@ -8,6 +8,7 @@ MASTER_SITES=	http://oku.edu.mie-u.ac.jp/~okumura/jsclasses/:0
 PKGNAMEPREFIX=	ja-tex-platex-
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0
 DIST_SUBDIR=	TeX
+BUILD_DEPENDS=	platex:${PORTSDIR}/japanese/tex-ptex
 
 #MAINTAINER=	kenji.rikitake@acm.org
 MAINTAINER=	hrs@FreeBSD.org
@@ -16,15 +17,9 @@ COMMENT=	New document class files for TeXlive-based pLaTeX
 USE_ZIP=	YES
 USE_TEX=	texlive ptex texhash
 NO_BUILD=	YES
-PLIST_SUB=	CLASSDIR=${CLASSDIR} TFMDIR=${TFMDIR} \
-		PLDIR=${PLDIR} MKTEXLSR=${MKTEXLSR} \
-		TEXMFDIR=${TEXMFDIR}
 WRKSRC=		${WRKDIR}
 
-TEXMFDIR=	share/texmf
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-
-CLASSDIR=	${TEXMFDIR}/ptex/platex/js
+CLASSDIR=	${TEXMFLOCALDIR}/tex/platex/js
 CLASS_FILES=	jsarticle.cls jsbook.cls \
 		jsclasses.dtx jsclasses.ins jspf.cls \
 		jsverb.dtx jsverb.ins jsverb.sty \
@@ -32,6 +27,7 @@ CLASS_FILES=	jsarticle.cls jsbook.cls \
 		morisawa.dtx morisawa.ins morisawa.sty \
 		okumacro.dtx okumacro.ins okumacro.sty \
 		okuverb.dtx okuverb.ins okuverb.sty
+PLIST_SUB=	CLASSDIR=${CLASSDIR}
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
