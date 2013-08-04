@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	ja-tex-platex-
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0
 DIST_SUBDIR=	TeX
 
-MAINTAINER=	kenji.rikitake@acm.org
+#MAINTAINER=	kenji.rikitake@acm.org
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	New document class files for TeXlive-based pLaTeX
 
