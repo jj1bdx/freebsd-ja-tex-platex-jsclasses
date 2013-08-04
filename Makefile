@@ -1,4 +1,5 @@
-# $FreeBSD: japanese/platex-jsclasses/Makefile 319148 2013-05-27 01:56:56Z hrs $
+# for a private port of japanese/ja-tex-platex-jsclasses
+# Originally from: $FreeBSD: japanese/platex-jsclasses/Makefile 319148 2013-05-27 01:56:56Z hrs $
 
 PORTNAME=	jsclasses
 PORTVERSION=	1.0.20130514
